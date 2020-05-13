@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel= "stylesheet" />
+    
+    <title>Easy Quiz by Talib</title>
+</head>
+
+
+<body>
+    <div class="container"><div class="row">
+        <div class="col-ms-24">
+            <h1 style="color:blue;">Guess which country</h1>
+            <hr>
+            <p id = "message">What is the country name for capital <text id="name"></text>?</p>
+            <div id="clearall">
+            <input type = "text" id= "input1" />&nbsp&nbsp&nbsp<button 
+            class="btn btn-primary"
+            onclick = "submit()" >Submit</button>
+        </div>
+            <p id = "answer"></p>
+            <p id = "btn"></p>
+        
+
+
+
+        </div>
+    </div></div>
+    
+    <script>
+        var capitals = ["KL", "London", "Canberra", "Bangkok", "Berlin"];
+        var countrys = ["Malaysia", "UK", "Australia", "Thailand", "Germany"];
+
+        var random = Math.floor(Math.random() * capitals.length);
+
+        function submit(){
+            var b = input1.value
+            if (random == 0 && b == countrys[0]) {
+                document.getElementById("answer").innerHTML = "Correct".fontcolor("green").bold().fontsize(12);
+                document.getElementById("btn").innerHTML = 
+                "<button class='btn btn-info'onclick=btn1()>Next</button>"; 
+               document.getElementById("clearall").innerHTML = "";     
+                    
+
+            }else if (random == 1 && b == countrys[1]) {
+                document.getElementById("answer").innerHTML = "Correct".fontcolor("green").bold().fontsize(12);
+                document.getElementById("btn").innerHTML = 
+                "<button class='btn btn-info' onclick=btn1()>Next</button>"; 
+                document.getElementById("clearall").innerHTML = ""; 
+
+            }else if (random == 2 && b == countrys[2]) {
+                document.getElementById("answer").innerHTML = "Correct".fontcolor("green").bold().fontsize(12);
+                document.getElementById("btn").innerHTML =
+                 "<button class='btn btn-info' onclick=btn1()>Next</button>"; 
+                document.getElementById("clearall").innerHTML = ""; 
+
+            }else if (random == 3 && b == countrys[3]) {
+                document.getElementById("answer").innerHTML = "Correct".fontcolor("green").bold().fontsize(12);
+                document.getElementById("btn").innerHTML =
+                 "<button class='btn btn-info' onclick=btn1()>Next</button>"; 
+                document.getElementById("clearall").innerHTML = ""; 
+
+            }else if (random == 4 && b == countrys[4]) {
+                document.getElementById("answer").innerHTML = "Correct".fontcolor("green").bold().fontsize(12);
+                document.getElementById("btn").innerHTML =
+                 "<button class='btn btn-info' onclick=btn1()>Next</button>"; 
+                document.getElementById("clearall").innerHTML = ""; 
+
+
+
+            }else{
+                document.getElementById("answer").innerHTML = "Wrong".fontcolor("red").bold().fontsize(12);
+                document.getElementById("btn").innerHTML = 
+                "<button class='btn btn-info' onclick=btn1()>Next</button>";
+                document.getElementById("clearall").innerHTML = "";  
+            }
+        }
+                            
+        document.getElementById("name").innerHTML = capitals[random];
+
+        function btn1(){
+            random = Math.floor(Math.random() * capitals.length);
+            document.getElementById("name").innerHTML = capitals[random];
+            document.getElementById("btn").innerHTML = "";  
+            document.getElementById("clearall").innerHTML = "<input type=text id=input1 />&nbsp&nbsp&nbsp<button class='btn btn-primary' onclick=submit()>Submit</button>"; 
+                    
+            document.getElementById("answer").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
